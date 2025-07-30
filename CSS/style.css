@@ -19,6 +19,7 @@
 body {
     background-color: var(--cor-de-fundo);
     margin: 0;
+    overflow-x: hidden;
 }
 
 /* HEADER */
@@ -521,7 +522,7 @@ main {
         position: fixed;
         top: 0;
         right: -210px;
-        width: 100px;
+        width: 150px;
         height: 100%;
         margin-top: 60px;
         background-color: var(--cor-primaria);
