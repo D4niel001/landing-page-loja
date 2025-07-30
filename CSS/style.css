@@ -1,0 +1,624 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;700&family=Raleway:wght@400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@600&display=swap');
+
+
+
+:root {
+    --cor-primaria: rgb(117 153 189);
+    --cor-secundaria: rgb(128 159 164);
+    --cor-de-fundo: rgb(246 246 246);
+    --preto: #000000;
+    --branco: #ffffff;
+
+    --font-titulo: 'Playfair Display', serif;
+    --font-principal: 'Playfair Display', serif;
+    --font-botao: 'Montserrat', sans-serif;
+}   
+
+body {
+    background-color: var(--cor-de-fundo);
+    margin: 0;
+}
+
+/* HEADER */
+.menu {
+    background-color: var(--cor-primaria);
+    height: 60px;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    display: flex;
+    justify-content: center; /* Centraliza o conteúdo interno */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.9);
+}
+
+.menu-container {
+    width: 100%;
+    max-width: 1200px;  /* largura máxima alinhada com o restante do conteúdo */
+    padding: 0 40px;    /* espaço lateral */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+/* LOGO */
+.logo {
+    position: absolute;
+    left: 40px; /* Alinhado com o padding lateral */
+}
+
+.logo a {
+    text-decoration: none;
+    color: var(--preto);
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+/* MENU */
+.nav {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+    margin: 0;
+    padding: 0;
+}
+
+.nav li a {
+    position: relative;
+    text-decoration: none;
+    color: white;
+    font-size: 1.2rem;
+    transition: color 0.3s ease;
+    padding-bottom: 4px; /* espaço para a linha */
+}
+
+.nav li a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0%;
+    height: 2px;
+    background-color: var(--preto);
+    transition: width 0.3s ease;
+}
+
+.nav li a:hover {
+    color: var(--preto); /* cor do texto ao passar o mouse */
+}
+
+.nav li a:hover::after {
+    width: 100%;
+}
+
+
+/* * seção 1 */
+
+main {
+    margin-top: 20px;
+}
+
+.secao-1,
+.secao-4 {
+    width: 100%;
+    max-width: 1200px;  /* igual ao menu */
+    margin: 0 auto;
+    padding: 0 40px;    /* mesmo padding lateral */
+    margin-bottom: 50px;
+}
+
+.container-1,
+.container-4 {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+.imagem-1,
+.imagem-4 {
+    width: 600px;
+    height: 600px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    opacity: 0;
+    transform: translateX(50px);
+    animation: slideIn 1s ease forwards;
+}
+
+/* ! Keyframes da animação */
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateX(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.secao-1 h1 {
+    padding: 50px 0;
+    font-size: 3rem;
+    text-align: end;
+    font-family: var(--font-titulo);
+    font-style: italic;
+
+}
+
+.secao-1 h1::after {
+    content: "";
+    display: block;
+    width: 40%;
+    height: 2px;
+    background-color: rgba(0, 0, 0, 0.3);
+    margin-top: 10px;
+    margin-left: auto;  
+    margin-right: 0;
+}
+
+.texto-1,
+.texto-4 {
+    text-align: end;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.texto-1 h2, 
+.texto-4 h2 {
+    font-size: 3.5rem;
+    font-family: var(--font-titulo);
+    font-style: italic;
+}
+
+.texto-1 h2::after, 
+.texto-4 h2::after {
+    content: "";
+    display: block;
+    width: 40%;
+    height: 2px;
+    background-color: rgba(0, 0, 0, 0.3);
+    margin-top: 10px;
+    margin-left: auto;  
+    margin-right: 0;
+}
+
+.texto-1 p, 
+.texto-4 p {
+    width: 500px;
+    padding: 30px 0;
+}
+
+.btn-1, 
+.btn-4 {
+    all: unset;
+    display: inline-block;
+    font-family: var(--font-botao);
+    font-style: italic;
+    cursor: pointer;
+    transition: color 0.3s ease;
+    margin-left: auto;
+}
+
+.btn-1::after, 
+.btn-4::after {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 2px;
+    background-color: rgba(0, 0, 0, 0.3);
+    margin-top: 10px;
+    margin-left: auto;  
+    margin-right: 0;
+}
+
+.btn-1:hover,
+.btn-4:hover {
+    color: var(--cor-secundaria);
+}
+
+/* * seção 2 */
+
+.secao-2, 
+.secao-5 {
+    width: 100%;
+    max-width: 1200px;  /* igual ao menu */
+    margin: 0 auto;
+    padding: 0 40px;    /* mesmo padding lateral */
+    margin-bottom: 50px;
+}
+
+.container-2 {
+    flex-direction: row-reverse;
+}
+
+.container-5 {
+    flex-direction: row-reverse;
+}
+
+.container-2,
+.container-5 {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+.imagem-2, 
+.imagem-5 {
+    width: 600px;
+    height: 600px;
+    box-shadow: 0 4px 15px rgba(121, 45, 45, 0.1);
+    opacity: 0;
+    transform: translateX(-50px);
+    animation: slideInLeft  1s ease forwards;
+}
+
+/* ! Keyframes da animação */
+
+@keyframes slideInLeft  {
+    from {
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.texto-2,
+.texto-5 {
+    text-align: start;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.texto-2 h2, 
+.texto-5 h2 {
+    font-size: 3.5rem;
+    font-family: var(--font-titulo);
+    font-style: italic;
+}
+
+.texto-2 h2::after,
+.texto-5 h2::after {
+    content: "";
+    display: block;
+    width: 40%;
+    height: 2px;
+    background-color: rgba(0, 0, 0, 0.3);
+    margin-top: 10px;
+    margin-left: 0;  
+    margin-right: auto;
+}
+
+.texto-2 p,
+.texto-5 p {
+    width: 500px;
+    padding: 30px 0;
+}
+
+.btn-2, 
+.btn-5 {
+    all: unset;
+    font-family: var(--font-botao);
+    font-style: italic;
+    cursor: pointer;
+    transition: color 0.3s ease;
+    margin-right: auto;
+}
+
+.btn-2::after, 
+.btn-5::after {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 2px;
+    background-color: rgba(0, 0, 0, 0.3);
+    margin-top: 10px;
+    margin-left: 0;  
+    margin-right: auto;
+}
+
+.btn-2:hover,
+.btn-5:hover {
+    color: var(--cor-secundaria);
+}
+
+/* * seção 3 */
+
+.secao-3 {
+    background-color: var(--cor-secundaria);
+    width: 100%;
+    padding: 80px 0;
+    margin-bottom: 50px;
+}
+
+.container-3 {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    flex-wrap: wrap; /* Responsivo */
+}
+
+.card {
+    width: 330px;
+    background-color: var(--branco);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card img {
+    width: 100%;
+    height: 500px;
+    object-fit: cover;
+}
+
+.card-info {
+    padding: 15px;
+    text-align: center;
+}
+
+.produto-nome {
+    font-size: 1.1rem;
+    font-weight: 500;
+    margin: 5px 0;
+    font-family: var(--font-principal);
+}
+
+.produto-preco {
+    font-size: 1.3rem;
+    color: var(--cor-primaria);
+    font-weight: bold;
+    font-family: var(--font-botao);
+}
+
+/* Efeito hover */
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* * rodape */
+
+.rodape {
+    width: 100%;
+    background-color: var(--cor-secundaria);
+    padding: 40px 20px;
+    color: var(--branco);
+    font-family: var(--font-principal);
+}
+
+/* Slogan */
+.slogan h2 {
+    width: 100%;
+    text-align: center;
+    padding-top: 20px;
+    font-family: var(--font-titulo);
+    font-size: 2rem;
+    font-style: italic;
+    color: var(--branco);
+}
+
+/* Container de informações */
+.info {
+    width: 100%;
+    max-width: 1200px;  
+    margin: 40px auto 0;
+    padding: 20px 40px; 
+    display: flex;
+    justify-content: center;
+    gap: 80px;
+}
+
+/* Títulos das seções */
+.rodape-social h4,
+.sobre h4 {
+    font-family: var(--font-titulo);
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+    color: var(--branco);
+    text-decoration: underline;
+}
+
+/* Links e ícones */
+.bi-rodape {
+    text-decoration: none;
+    color: #f1f1f1;
+    font-family: var(--font-principal);
+    font-size: 1.1rem;
+    transition: color 0.3s ease;
+    cursor: pointer;
+}
+
+.bi-rodape:hover {
+    color: var(--preto);
+}
+
+/* Lista de links */
+.rodape-social ul li,
+.sobre ul li {
+    padding: 6px 0;
+}
+
+.mapa-container {
+    width: 50%;
+    text-align: center;
+}
+
+.mapa-container h4 {
+    font-family: var(--font-titulo);
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+/* * media query */
+
+/* * Menu lateral*/
+
+.menu-hamburguer {
+    display: none; /* Escondido no desktop */
+    font-size: 2rem;
+    color: white;
+    cursor: pointer;
+    
+}
+
+.bi-list:hover {
+    color: var(--preto);
+    transition: color 1s ease;
+}
+
+
+
+@media (max-width: 768px) {
+
+    .secao-1, 
+    .secao-2, 
+    .secao-4, 
+    .secao-5,
+    .rodape {
+       max-width: 90%;  
+    }
+
+    .menu-container {
+        justify-content: flex-start; /* Alinha tudo à esquerda */
+        position: relative;
+    }
+
+    .menu-hamburguer {
+        position: absolute;
+        right: 40px; /* botão vai para a direita */
+    }
+
+    .logo {
+        position: absolute;
+        left: 40px; /* mantém a logo no canto esquerdo */
+    }
+    
+    /* Esconde o menu horizontal do desktop */
+    .nav {
+        display: none;
+    }
+
+    /* Mostra o botão hamburguer */
+    .menu-hamburguer {
+        display: block;
+    }
+
+    .nav {
+        display: flex;
+        flex-direction: column;
+        position: fixed;
+        top: 0;
+        right: -210px;
+        width: 100px;
+        height: 100%;
+        margin-top: 60px;
+        background-color: var(--cor-primaria);
+        padding: 50px 20px;
+        transition: right 0.3s ease;
+        z-index: 1000;
+    }
+
+    /* Quando ativado pelo JS, ele aparece */
+    .nav.ativo {
+        right: 0;
+    }
+
+    .nav li {
+        margin: 20px 0;
+    }
+    
+    .nav li a {
+        color: var(--branco);
+        font-size: 1.5;
+        text-decoration: none;
+    }
+
+    /* Ajuste da seção 1 */
+    .container-1, 
+    .container-2, 
+    .container-3, 
+    .container-4, 
+    .container-5 {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .texto-1 p, 
+    .texto-2 p, 
+    .texto-3 p, 
+    .texto-4 p, 
+    .texto-5 p {
+        width: 100%;
+    }
+    
+    .imagem-1, 
+    .imagem-2, 
+    .imagem-3, 
+    .imagem-4, 
+    .imagem-5 {
+        width: 100%;
+        height: auto;
+        max-width: 400px;
+        margin-top: 20px;
+    }
+
+    /* * rodape */
+
+   .info {
+        flex-direction: column;
+        align-items: center;
+        gap: 40px;
+        padding: 20px 0;
+        text-align: center;
+    }
+
+    .rodape-social,
+    .sobre,
+    .mapa-container {
+        width: 100%;
+        max-width: 400px;
+    }
+
+    .rodape-social ul li,
+    .sobre ul li {
+        padding: 5px 0;
+    }
+
+    .mapa-container iframe {
+        width: 100%;
+        height: 200px;
+    }
+    
+}
+
+
+@media (max-width: 480px) {
+    .slogan h2 {
+        font-size: 1.5rem;
+        padding-top: 10px;
+    }
+
+    .info {
+        gap: 20px;
+    }
+
+    .mapa-container iframe {
+        height: 200px;
+    }
+}
+
+
+
